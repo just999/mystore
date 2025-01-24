@@ -1,0 +1,184 @@
+{
+  "editor.fontFamily": "Cascadia Code, JetBrainsMono NF, Cascadia Code, CaskaydiaCove Nerd Font Propo, Consolas, Operator Mono, MonoLisa, VictorMono Nerd Font Mono, Fira Code, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum'",
+  "editor.fontWeight": "400",
+  "editor.fontSize": 11,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.hover.enabled": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.addMissingImports": "explicit"
+  },
+  "color-highlight.enable": true,
+  "eslint.enable": true,
+  "color-highlight.languages": ["*"],
+  // "editor.fontFamily": "'FiraCode Nerd Font', 'JetbrainsMono Nerd Font', 'Hack Nerd Font', 'monospace'",
+  // "editor.lineHeight": 1.5,
+  "editor.smoothScrolling": true,
+  // "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum'",
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  "workbench.iconTheme": "material-icon-theme",
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.arrowParens": "always",
+  "editor.autoClosingBrackets": "always",
+  // "editor.codeActionsOnSave": {
+  //   "source.organizeImports": "always"
+  // },
+  "auto-close-tag.activationOnLanguage": [
+    "xml",
+    "php",
+    "blade",
+    "ejs",
+    "jinja",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "plaintext",
+    "markdown",
+    "vue",
+    "liquid",
+    "erb",
+    "lang-cfml",
+    "cfml",
+    "HTML (EEx)",
+    "HTML (Eex)",
+    "plist"
+  ],
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  },
+  "cSpell.ignorePaths": [
+    "package-lock.json",
+    "node_modules",
+    "vscode-extension",
+    ".git/objects",
+    ".vscode",
+    ".vscode-insiders",
+    "build",
+    "package.json",
+    "public",
+    "db.json",
+    ".gitignore",
+    "**/settings.json",
+    "**/Users/justin/AppData/Roaming/Code/User/settings.json"
+  ],
+  "liveServer.settings.fullReload": true,
+  "javascript.autoClosingTags": true,
+  "html.autoClosingTags": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.words": ["dengan"],
+  "todo-tree.tree.showBadges": false,
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FDFEFF",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#00A36C",
+      "bold": false,
+      "italic": false,
+      "fontWeight": 100,
+      "fontSize": 24
+    },
+    {
+      "tag": "?",
+      "color": "#FDFEFF",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#bda800",
+      "bold": true,
+      "fontSize": 18,
+      "fontWeight": 600,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#FDFEFF",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "#FFA500",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "rgb(8, 4, 31)",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#F5DEB3",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#000",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#eee",
+      "bold": true,
+      "italic": false
+    }
+  ],
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "comment",
+        "settings": {
+          "fontStyle": "italic",
+          "fontSize": "18",
+          "fontWeight": "bold"
+        }
+      }
+    ]
+  },
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "workbench.colorCustomizations": {
+    "editorCursor.foreground": "#FFFF00",
+    "terminalCursor.foreground": "#FF75D8",
+    "activityBar.foreground": "#78ECA3",
+    "activityBar.background": "#000000",
+    "activityBar.inactiveForeground": "#096E07",
+    "activityBarBadge.foreground": "#000404",
+    "activityBarBadge.background": "#4BC9D9",
+    "statusBar.foreground": "#BAFF8B",
+    "statusBar.background": "#377D08",
+    "statusBarItem.hoverBackground": "#1F5E1E",
+    "statusBarItem.remoteForeground": "#9CFFC0",
+    "statusBarItem.remoteBackground": "#11863C",
+    "statusBar.debuggingForeground": "#000000",
+    "statusBar.debuggingBackground": "#6DB33E"
+  }
+}
