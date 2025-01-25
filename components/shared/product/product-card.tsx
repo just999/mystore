@@ -3,6 +3,7 @@ import { Product } from '@prisma/client';
 import Image from 'next/image';
 import Link from 'next/link';
 import ProductPrice from './product-price';
+import Rating from './rating';
 
 type ProductCardProps = {
   product: Product;
@@ -33,7 +34,8 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </Link>
 
         <div className='flex-between flex gap-4'>
-          <p>{product.rating} Stars</p>
+          {/* <p>{product.rating} Stars</p> */}
+          <Rating value={Number(product.rating)} />
           {Number(product.stock) > 0 ? (
             <ProductPrice value={Number(product.price)} className=' ' />
           ) : (

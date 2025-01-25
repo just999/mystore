@@ -23,6 +23,7 @@ import { OrderItem, ShippingAddress } from '@prisma/client';
 import { Loader } from 'lucide-react';
 import { useTransition } from 'react';
 import { orderDetailColumns } from './order-detail-columns';
+import StripePayment from './stripe-payment';
 
 // export interface OrderWithDetails extends Order {
 //   shippingAddress: ShippingAddress;
@@ -35,6 +36,7 @@ type OrderDetailsTableProps = {
   orderItems: OrderItem[];
   paypalClientId: string;
   isAdmin: boolean;
+  stripeClientSecret: string | null;
 };
 
 const OrderDetailsTable = ({
@@ -43,6 +45,7 @@ const OrderDetailsTable = ({
   address,
   paypalClientId,
   isAdmin,
+  stripeClientSecret,
 }: OrderDetailsTableProps) => {
   const [isPending, startTransition] = useTransition();
 
@@ -219,6 +222,14 @@ const OrderDetailsTable = ({
                     />
                   </PayPalScriptProvider>
                 </div>
+              )}
+
+              {!isPaid && paymentMethod === 'Stripe' && stripeClientSecret && (
+                <StripePayment
+                  priceInCents={Number(order.totalPrice) * 100}
+                  orderId={order.id}
+                  clientSecret={stripeClientSecret}
+                />
               )}
 
               {isAdmin && !isPaid && paymentMethod === 'CashOnDelivery' && (

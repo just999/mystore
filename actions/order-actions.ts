@@ -364,7 +364,7 @@ export async function approvePayPalOrder(
 // }
 
 //*UPDATE ORDER TO PAID BY CLAUDE */
-async function updateOrderToPaid({
+export async function updateOrderToPaid({
   orderId,
   paymentResult,
 }: {

@@ -32,6 +32,7 @@ model Product {
   updatedAt DateTime @updatedAt
 
   orderItem OrderItem[]
+  review    Review[]
 }
 
 model User {
@@ -52,6 +53,7 @@ model User {
   cart            Cart[]
   shippingAddress ShippingAddress[]
   order           Order[]
+  review          Review[]
 }
 
 enum Role {
@@ -205,6 +207,21 @@ model PaymentResult {
   status        String?
   email_address String?
   pricePaid     String
+
+  createdAt DateTime @default(now())
+  updated   DateTime @updatedAt
+}
+
+model Review {
+  id                 String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId             String  @db.ObjectId
+  user               User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  productId          String  @db.ObjectId
+  product            Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  rating             Int
+  title              String
+  description        String
+  isVerifiedPurchase Boolean @default(true)
 
   createdAt DateTime @default(now())
   updated   DateTime @updatedAt

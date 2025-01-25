@@ -1,11 +1,14 @@
 import { CartResponse, getMyCart } from '@/actions/cart-actions';
 import { getProductBySlug } from '@/actions/product-actions';
+import { auth } from '@/auth';
 import AddToCart from '@/components/shared/product/add-to-cart';
 import ProductImages from '@/components/shared/product/product-images';
 import ProductPrice from '@/components/shared/product/product-price';
+import Rating from '@/components/shared/product/rating';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { notFound } from 'next/navigation';
+import ReviewList from './review-list';
 
 type ProductDetailPageProps = {
   params: Promise<{ slug: string }>;
@@ -17,6 +20,9 @@ const ProductDetailPage = async ({ params }: ProductDetailPageProps) => {
   const prod = await getProductBySlug(slug);
 
   if (!prod) notFound();
+
+  const session = await auth();
+  const userId = session?.user.id;
 
   const cart = (await getMyCart()) as CartResponse | undefined;
   return (
@@ -32,12 +38,14 @@ const ProductDetailPage = async ({ params }: ProductDetailPageProps) => {
                 {prod.brand} {prod.category}
               </p>
               <h1 className='h3-bold'>{prod.name}</h1>
-              <p>
+              <Rating value={Number(prod.rating)} />
+              <p>{prod.numReviews} reviews</p>
+              {/* <p>
                 {prod.rating} of {prod.numReviews}
                 <span className='pl-2'>
                   {Number(prod.numReviews) > 1 ? 'Reviews' : 'Review'}
                 </span>
-              </p>
+              </p> */}
               <div className='flex flex-col gap-3 sm:flex-row sm:items-center'>
                 <ProductPrice
                   value={Number(prod.price)}
@@ -89,6 +97,15 @@ const ProductDetailPage = async ({ params }: ProductDetailPageProps) => {
             </Card>
           </div>
         </div>
+      </section>
+
+      <section className='mt-10'>
+        <h2 className='h2-bold'>Customer Reviews</h2>
+        <ReviewList
+          userId={userId || ''}
+          productId={prod.id}
+          productSlug={prod.slug}
+        />
       </section>
     </>
   );

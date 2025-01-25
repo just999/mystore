@@ -39,7 +39,7 @@ export type InsertProductSchema = z.infer<typeof insertProductSchema>;
 export type ProductSchema = z.infer<typeof insertProductSchema> & {
   id: string;
   createdAt: Date;
-  rating: string;
+  rating: number;
   numReviews: string;
 };
 

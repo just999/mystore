@@ -1,11 +1,11 @@
-import { Button } from '@/components/ui/button';
 import {
+  Button,
   Sheet,
   SheetContent,
   SheetDescription,
   SheetTitle,
   SheetTrigger,
-} from '@/components/ui/sheet';
+} from '@/components/ui';
 import UserButtonWrapper from '@/components/user-button-wrapper';
 import { EllipsisVertical, ShoppingCart } from 'lucide-react';
 import Link from 'next/link';
