@@ -492,17 +492,6 @@ export async function getMyOrders({
     skip: (page - 1) * limit,
   });
 
-  // // Transform the data to match the expected types
-  // const data: OrderWithRelations[] = rawData.map((order) => ({
-  //   ...order,
-  //   paymentResult: order.paymentResult as PaymentResult, // Type assertion for the JSON value
-  //   orderitems: order.orderitems.map((item) => ({
-  //     ...item,
-  //     qty: item.qty.toString(), // Ensure qty is a string
-  //     price: item.price.toString(), // Ensure price is a string
-  //   })),
-  // }));
-
   const data: OrderWithRelations[] = rawData.map((order) => {
     let paymentResult: PaymentResult;
 
